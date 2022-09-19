@@ -1,17 +1,22 @@
 <div class="container">
     <div class="col-sm-4 mx-auto mt-5">
         <h3><i class="fa fa-user" aria-hidden="true"></i> Regiser Here</h3>
-        <hr/>
-        <form>
-            <label>Enter Your Name:</label>
-            <input type="text" name="Fname" value="" placeholder="Enter Your Name..." class="form-control"/>
-            <label>Email Id:</label>
-            <input type="email" name="name" value="" placeholder="Email Id.." class="form-control"/>
-            <label>Enter Password:</label> 
-            <input type="password" name="name" value="" placeholder="Password Here.." class="form-control"/>
-            <input type="button" value="Register" class="btn btn-success"/>  &nbsp;&nbsp;&nbsp;&nbsp;
+        <hr />
+        <form [formGroup]="form">
+            <div class="form-group">
+                <label>Enter Your Name:</label>
+                <input type="text" name="Fname" value="" placeholder="Enter Your Name..." formControlName="name"
+                    class="form-control" />
+                <label>Email Id:</label>
+                <input type="email" name="name" value="" placeholder="Email Id.." formControlName="email"
+                    class="form-control" />
+                <label>Enter Password:</label>
+                <input type="password" name="name" value="" placeholder="Password Here.." formControlName="password"
+                    class="form-control" />
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
             <a routerLink="/Login">Login Here</a>
         </form>
-        <br/>
+        <br />
     </div>
 </div>
