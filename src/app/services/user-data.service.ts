@@ -13,8 +13,14 @@ export class UserDataService {
     return this.http.get(this.Url)
   }
   SaveUserData(data:any)
-  {debugger
+  {
+    debugger;
     return this.http.post(this.Url,data); 
+  }
+  DeleteUser(data:any)
+  {
+    debugger;
+    return this.http.delete(this.Url,data);
   }
 
 

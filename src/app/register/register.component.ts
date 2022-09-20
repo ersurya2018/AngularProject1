@@ -36,7 +36,7 @@ export class RegisterComponent implements OnInit {
     this.userdataApi.SaveUserData(this.registerForm.value).subscribe((res)=>{
       if(res){
         this.router.navigate(['/ShowAllData']);
-      }
+      } 
       console.warn(res);
     })
   }
