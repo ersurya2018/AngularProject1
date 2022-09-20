@@ -6,9 +6,9 @@
         <hr/>
         <form #login="ngForm" (ngSubmit)="userLogin(login.value)">
             <label>Enter User Name:</label> 
-            <input type="text" name="uname" placeholder="User Name..." class="form-control" ngModule/>
+            <input type="text" name="uname" placeholder="User Name..." class="form-control" ngModel/>
             <label>Enter Password:</label> 
-            <input type="password" name="upassword" placeholder="Password Here.." class="form-control" ngModule/>
+            <input type="password" name="upassword" placeholder="Password Here.." class="form-control" ngModel/>
             <button class="btn btn-success"> Login</button> &nbsp;&nbsp;&nbsp;&nbsp;
             <a routerLink="/Regiser">Register Here</a>
         </form>
