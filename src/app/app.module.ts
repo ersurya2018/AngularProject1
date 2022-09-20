@@ -10,6 +10,9 @@ import { ServiceComponent } from './service/service.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import{HttpClientModule} from '@angular/common/http';
+import { ShowAllDataComponent } from './show-all-data/show-all-data.component';
 
 @NgModule({
   declarations: [
@@ -19,12 +22,16 @@ import { FormsModule } from '@angular/forms';
     ContactComponent,
     ServiceComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ShowAllDataComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

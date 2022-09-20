@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { FormControl,FormGroup, Validators } from '@angular/forms';
+import { UserDataService } from '../services/user-data.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -7,14 +8,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
-
+  userData:any;
+  constructor(private userdata:UserDataService) {
+    this.userData=userdata.usersGetData();
+   }
+  LoginForm=new FormGroup({
+    UserName:new FormControl('',Validators.required),
+    UserPassword:new FormControl(''),
+  })
+  LoginUser(){
+    // this.LoginForm.value.UserName="",
+    // this.LoginForm.value.UserPassword=""
+    console.warn(this.LoginForm.value)
+  }
   ngOnInit(): void {
   }
-  userLogin(item1:any){
-    alert("login");
-    console.warn(item1.uname);
-    console.warn(item1.upassword);
+
+  get uservalidator()
+  {
+    return this.LoginForm.get('UserName');
   }
+  // this is use for template driven form
+  // userLogin(item1:any){
+  //   alert("login");
+  //   console.warn(item1.uname);
+  //   console.warn(item1.upassword);
+  // }
 
 }

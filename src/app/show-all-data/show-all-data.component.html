@@ -1,0 +1,27 @@
+
+<div class="container">
+    <div class="col-sm-10 mx-auto mt-5">
+       <table class="table">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Action</th>
+        </tr>
+            <tr *ngFor="let Ulist of userList">
+                <td>{{Ulist.id}}</td>
+                <td>{{Ulist.First_name}} {{Ulist.Last_name}}</td>
+                <td>{{Ulist.Email}}</td>
+                <td>{{Ulist.Password}}</td>
+                <td>
+                    <a href="">Delete</a>&nbsp;&nbsp;&nbsp;
+                    <a href="">Update</a>
+                </td>
+            </tr>
+        
+       </table> 
+    </div>
+</div>
+
+

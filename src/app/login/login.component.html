@@ -1,5 +1,31 @@
 
+<!-- this id the Relative form -->
+<!-- <h1>{{UserName}}</h1>
+<h1>{{UserPassword}}</h1> -->
 <div class="container">
+    <div class="col-sm-4 mx-auto mt-5">
+        <h3><i class="fa fa-user" aria-hidden="true"></i> Login Here</h3>
+        <hr/>
+        <form [formGroup]="LoginForm" (ngSubmit)="LoginUser()">
+            <label>Enter User Name:</label> 
+            <input type="email" formControlName="UserName" placeholder="User Name..." class="form-control" style="margin: 0;"/>
+            <span *ngIf="uservalidator && uservalidator.invalid && uservalidator.touched" style="color:red;">Enter UserName*</span><br/>
+            <label>Enter Password:</label> 
+            <input type="password" formControlName="UserPassword" placeholder="Password Here.." class="form-control"/>
+            <button [disabled]="LoginForm.invalid" class="btn btn-success" > Login</button> &nbsp;&nbsp;&nbsp;&nbsp;
+            <a routerLink="/Regiser">Register Here</a>
+        </form>
+        <br/>
+        <ul *ngFor="let data of userData">
+            <li>{{data?.name}} : {{data?.email}}</li>
+        </ul>
+    </div>
+</div>
+
+
+<!-- this example is the template driven form -->
+
+<!-- <div class="container">
     
     <div class="col-sm-4 mx-auto mt-5">
         <h3><i class="fa fa-user" aria-hidden="true"></i> Login Here</h3>
@@ -15,4 +41,4 @@
         
         <br/>
     </div>
-</div>
+</div> -->

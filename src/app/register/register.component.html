@@ -2,17 +2,20 @@
     <div class="col-sm-4 mx-auto mt-5">
         <h3><i class="fa fa-user" aria-hidden="true"></i> Regiser Here</h3>
         <hr />
-        <form #register="ngForm" (ngSubmit)="userRegister(register.value)">
+        <form [formGroup]="registerForm" (ngSubmit)="userReg()">
             <div class="form-group" >
-                <label>Enter Your Name:</label>
-                <input type="text" name="Fname" placeholder="Enter Your Name..." class="form-control" ngModel/>
+                <label>First Name:</label>
+                <input type="text" formControlName="First_name" placeholder="First Name.." class="form-control" style="margin: 0;"/>
+                <span *ngIf="FnameValidator && FnameValidator.invalid && FnameValidator.touched" style="color:red;">Enter the name* </span><br/>
+                <label>Last Name:</label>
+                <input type="text" formControlName="Last_name" placeholder="Last Name.." class="form-control"/>
                 <label>Email Id:</label>
-                <input type="email" name="name" placeholder="Email Id.." class="form-control" ngModel/>
+                <input type="email" formControlName="Email" placeholder="Email Id.." class="form-control" ngModel/>
                 <label>Enter Password:</label>
-                <input type="password" name="Password" placeholder="Password Here.." class="form-control" ngModel/>
+                <input type="password" formControlName="Password" placeholder="Password Here.." class="form-control"/>
             </div>
-            <button class="btn btn-default">Submit</button>
-            <a routerLink="/Login">Login Here</a>
+            <button [disabled]="registerForm.invalid" class="btn btn-success">Submit</button> &nbsp;&nbsp;&nbsp;
+            <a routerLink="/Login">Login Here>></a>
         </form>
         <br />
     </div>
