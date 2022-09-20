@@ -4,14 +4,15 @@
     <div class="col-sm-4 mx-auto mt-5">
         <h3><i class="fa fa-user" aria-hidden="true"></i> Login Here</h3>
         <hr/>
-        <form>
+        <form #login="ngForm" (ngSubmit)="userLogin(login.value)">
             <label>Enter User Name:</label> 
-            <input type="text" name="name" value="" placeholder="User Name..." class="form-control"/>
+            <input type="text" name="uname" placeholder="User Name..." class="form-control" ngModule/>
             <label>Enter Password:</label> 
-            <input type="password" name="name" value="" placeholder="Password Here.." class="form-control"/>
-            <input type="button" value="Login Here" class="btn btn-success"/>  &nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="password" name="upassword" placeholder="Password Here.." class="form-control" ngModule/>
+            <button class="btn btn-success"> Login</button> &nbsp;&nbsp;&nbsp;&nbsp;
             <a routerLink="/Regiser">Register Here</a>
         </form>
+        
         <br/>
     </div>
 </div>

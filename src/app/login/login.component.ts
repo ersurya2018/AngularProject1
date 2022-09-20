@@ -11,5 +11,10 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  userLogin(item1:any){
+    alert("login");
+    console.warn(item1.uname);
+    console.warn(item1.upassword);
+  }
 
 }
