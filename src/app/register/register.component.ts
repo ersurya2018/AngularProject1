@@ -33,7 +33,7 @@ export class RegisterComponent implements OnInit {
   userReg(){debugger
     console.warn(this.registerForm.value);
     this.objectdata=this.registerForm.value;
-    this.userdataApi.SaveUserData(this.registerForm.value).subscribe((res)=>{
+    this.userdataApi.SaveUserData(this.registerForm.value).subscribe((res:any)=>{debugger
       if(res){
         this.router.navigate(['/ShowAllData']);
       } 

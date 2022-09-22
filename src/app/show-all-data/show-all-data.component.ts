@@ -12,10 +12,17 @@ export class ShowAllDataComponent implements OnInit {
   userList:any;
   constructor(private UserListApi:UserDataService,
     public router:Router) {
-    this.UserListApi.usersGetData().subscribe((data)=>{
-      console.log("data",data);
-      this.userList=data
-    })
+      try{
+        this.UserListApi.usersGetData().subscribe((data)=>{
+          debugger
+          console.log("data",data);
+          
+          this.userList=data
+        })
+      }catch(error)
+      {
+
+      }
    }
    DeleteUser(id:any){
     debugger;
