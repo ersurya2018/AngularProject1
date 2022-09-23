@@ -7,30 +7,26 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class UserDataService {
-
   // Url="http://localhost:3000/Users";
   Url="https://localhost:44373";
   constructor(private http:HttpClient) { }
   usersGetData()
   {
-    debugger;
-    var data = this.http.get<any>(this.Url+"/Api/GetAllUserData");
+    var data = this.http.get(this.Url+"/api/GetAllUserData");
     return data
   }
-
+  public getTest(): Observable<any> {
+    return this.http.get('https://reqres.in/api/users?page=1');//.pipe(map(res => res));
+  }
   SaveUserData(data:any)
   {
-    debugger;
     var res = this.http.post(this.Url+"/api/CreateTodoItem",data); 
-    return data
+    return res
   }
-  DeleteUser(data:any)
+  DeleteUser(id:any)
   {
-    debugger;
-    return this.http.delete(this.Url,data);
+    return this.http.delete(this.Url+"/api/DeleteTodoItem/"+id);
   }
-
-
   // users()
   // {
   //   return[

@@ -7,10 +7,8 @@ import { UserDataService } from '../services/user-data.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
   userData:any;
   constructor(private userdata:UserDataService) {
-    this.userData=userdata.usersGetData();
    }
   LoginForm=new FormGroup({
     UserName:new FormControl('',Validators.required),

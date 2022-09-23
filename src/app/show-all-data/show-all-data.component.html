@@ -13,11 +13,11 @@
             <tbody>
                 <tr *ngFor="let Ulist of userList">
                     <td>{{Ulist.id}}</td>
-                    <td>{{Ulist.First_name}} {{Ulist.Last_name}}</td>
-                    <td>{{Ulist.Email}}</td>
-                    <td>{{Ulist.Password}}</td>
+                    <td>{{Ulist.first_Name}} {{Ulist.last_Name}}</td>
+                    <td>{{Ulist.email}}</td>
+                    <td>{{Ulist.password}}</td>
                     <td>
-                        <button (click)="DeleteUser(Ulist.id)">Delete</button>&nbsp;&nbsp;&nbsp;
+                        <button class="btn btn-danger" (click)="DeleteUser(Ulist.id)">Delete</button>&nbsp;&nbsp;&nbsp;
                         <a href="">Update</a>
                     </td>
                 </tr>

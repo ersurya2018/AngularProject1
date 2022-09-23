@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserDataService } from '../services/user-data.service';
-
-
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -14,8 +12,8 @@ export class RegisterComponent implements OnInit {
   constructor(private userdataApi:UserDataService,
     public router:Router)
   {
-    console.warn("userdata",userdataApi.usersGetData())
-    this.userData=userdataApi.usersGetData().subscribe;
+    // console.warn("userdata",userdataApi.usersGetData())
+    // this.userData=userdataApi.usersGetData().subscribe;
     //this.userDemo=userdata.users1();  
 
   }
@@ -30,10 +28,10 @@ export class RegisterComponent implements OnInit {
     Email:new FormControl(''),
     Password:new FormControl('')
   });
-  userReg(){debugger
+  userReg(){
     console.warn(this.registerForm.value);
     this.objectdata=this.registerForm.value;
-    this.userdataApi.SaveUserData(this.registerForm.value).subscribe((res:any)=>{debugger
+    this.userdataApi.SaveUserData(this.registerForm.value).subscribe((res:any)=>{
       if(res){
         this.router.navigate(['/ShowAllData']);
       } 
