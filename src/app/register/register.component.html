@@ -10,7 +10,13 @@
                 <label>Last Name:</label>
                 <input type="text" formControlName="Last_name" placeholder="Last Name.." class="form-control"/>
                 <label>Email Id:</label>
-                <input type="email" formControlName="Email" placeholder="Email Id.." class="form-control" ngModel/>
+                <input type="email" formControlName="Email" placeholder="Email Id.." class="form-control"/>
+                <!-- <div *ngIf="submitted && f.Email.errors" class="invalid-feedback">
+                    <div *ngIf="f.Email.errors.required">Email is required</div>
+                    <div *ngIf="f.Email.errors.email">
+                      Email must be a valid email address
+                    </div>
+                  </div> -->
                 <label>Enter Password:</label>
                 <input type="password" formControlName="Password" placeholder="Password Here.." class="form-control"/>
             </div>
