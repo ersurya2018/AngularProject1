@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import{HttpClientModule} from '@angular/common/http';
 import { ShowAllDataComponent } from './show-all-data/show-all-data.component';
+import { FullFormComponent } from './full-form/full-form.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { ShowAllDataComponent } from './show-all-data/show-all-data.component';
     LoginComponent,
     RegisterComponent,
     ShowAllDataComponent,
+    FullFormComponent,
     
   ],
   imports: [
